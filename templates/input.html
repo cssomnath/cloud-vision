@@ -1,0 +1,20 @@
+<!doctype html>
+<title>Google Vision API</title>
+
+<link rel="stylesheet" type="text/css" href="static/css/styles.css">
+
+<h3> Enter a URL for image </h3>
+<form action="/api" method=get>
+    <input type="text" name=image_url>
+    <input type="submit" value="Submit">
+</form>
+
+<p>
+
+{% if error_msg %}
+    <b> {{ error_msg }} </b>
+{% elif image_url %}
+    <b>Image URL: </b> {{ image_url }}
+    <hr>
+    {% extends "results.html" %}
+{% endif %}

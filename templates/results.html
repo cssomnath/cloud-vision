@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Product Attributes</title>
+	<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.css">
+	<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
+</head>
+
+<body>
+	<h4>Source Image</h4>
+    <img src="static/img/{{ image_file }}" alt="Source Image" style="width:304px;height:228px;">
+	<hr/>
+	<h4>Labels</h4>
+	<div id="labels">
+		<table id='labeltable' class="display" border='1' width="50%" align="left">
+			<thead>
+				<tr>
+					<th>Score</th>
+					<th>mid</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+		</table>
+	</div>
+
+	<hr/>
+	<h4>Logos</h4>
+	<div id="logo">
+		<table id='logotable' class="display" border='1' width="25%" align="left">
+			<thead>
+				<tr>
+					<th>Score</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>
+
+	<hr/>
+	<h4>Texts</h4>
+	<div id="texts">
+		<table id='texttable' class="display" border='1' width="25%" align="left">
+			<thead>
+				<tr>
+					<th>Locale</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>
+
+	<hr/>
+	<h4>Colors</h4>
+	<div id="color">
+		<table id='colortable' class="display" border='1' width="50%" align="left">
+			<thead>
+				<tr>
+					<th>Score</th>
+					<th>pixelFraction</th>
+					<th>rgb</th>
+					<th>Color</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>
+
+    <script>
+        var labeldata_path="static/data/{{ prefix }}_labels.json";
+        var logodata_path="static/data/{{ prefix }}_logos.json";
+        var textdata_path="static/data/{{ prefix }}_texts.json";
+        var colordata_path="static/data/{{ prefix }}_colors.json";
+    </script>
+
+	<script type="text/javascript" src='static/js/labeldata.js'></script>
+	<script type="text/javascript" src='static/js/logodata.js'></script>
+	<script type="text/javascript" src='static/js/textdata.js'></script>
+	<script type="text/javascript" src='static/js/colordata.js'></script>
+</body>
+</html>
